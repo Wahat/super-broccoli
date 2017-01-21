@@ -12,11 +12,13 @@
 		<!-- Inject all JS Dependancies -->
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 		<script type="text/javascript" src="js/animations.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="TypeCooker">
 		<div class="single-page-view">
 			<!-- Top Navigation Bar -->
 			<nav class="bootstrap-override navbar navbar-inverse">
@@ -39,15 +41,22 @@
 					<!-- The Money board -->
 					<div class="score-board">
 						<h1 class="text-center score-label">Money</h1>
-						<h2 id="score" class="text-center">0</h2>
+						<h2 id="score" class="text-center">$0</h2>
 					</div>
 				</div>
 			</div>
 
 			<!-- Main Side Slides -->
 			<!-- Hidden Store Slide -->
-			<div id="store" class="store">
-				<hr>
+			<div id="store" class="store" ng-controller="MainController as main">
+				<h1 class="text-center">Store</h1>
+				<div class="store-item" ng-repeat="recipie in main.food">
+					<div class="store-image" ng-src="{{ recipie.image }}"></div>
+				</div>
+
+				<h3 class="text-center" style="text-decoration: underline;">Balance</h2>
+				<h4 class="text-center">Amount</h4>
+				<button class="checkout">Checkout</button>
 			</div>
 
 			<div class="cutting-board-container">
