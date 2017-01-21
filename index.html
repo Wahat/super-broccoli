@@ -18,29 +18,36 @@
 
 	<body>
 		<div class="single-page-view">
+			<!-- Top Navigation Bar -->
 			<nav class="bootstrap-override navbar navbar-inverse">
 			  <div class="container-fluid">
 			    <div class="navbar-header">
-			      <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png">TypeCooker</a>
+			      <a id="brand" class="navbar-brand" href="#"><img class="logo" src="images/logo.png">TypeCooker</a>
 			    </div>
-
+			    <!-- Shifts the top navigation bar UI to the right -->
 			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="#">Store</a></li>
-			      <li><a href="#">Statistics</a></li>
+			      <li><a id="store-nav" href="#">Store</a></li>
+			      <li><a id="stat-nav" href="#">Statistics</a></li>
 			    </ul>
 
 			  </div>
 			</nav>
 
+			<!-- Contains the main dynamic image -->
 			<div class="pan-container" style="background-image: url('images/stoveTop.jpg')">
 				<div class="pan" style="background-image: url('images/FryingPanWstove.gif');">
+					<!-- The Money board -->
 					<div class="score-board">
-						<h1 class="text-center score-label">Score:</h1>
+						<h1 class="text-center score-label">Money</h1>
 						<h2 id="score" class="text-center">0</h2>
 					</div>
-					<div class="shop">
-					</div>
 				</div>
+			</div>
+
+			<!-- Main Side Slides -->
+			<!-- Hidden Store Slide -->
+			<div class="store">
+				
 			</div>
 
 			<div class="cutting-board-container">
@@ -53,7 +60,7 @@
 
 				<div class="text-input-container">
 
-					<input id = "typing" class="text-input-field typing">
+					<input id = "typing" class="text-input-field typing" placeholder="Start Typing Here">
 
 
 				</div>
