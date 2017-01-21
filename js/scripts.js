@@ -12,6 +12,7 @@ $(document).ready(function() {
 			return false;
 		}
 	});
+	var userFood = [];
 	var food = [
 		{
 			name: "Pico de Gallo",
@@ -72,6 +73,7 @@ $(document).ready(function() {
 		}
 	]
 	var total = 0;
+	var j = 0;
 	// store-image is the actually store. When clicked, we want the balance to show at the bottom
 	// price = price of the food clicked
 	// selected = will determine whether or not ingredient is being bought, or returned
@@ -79,6 +81,7 @@ $(document).ready(function() {
 	$(".store-image").click(function () {
 		price = parseInt(this.getAttribute("data-foodPrice"));
 		selected = parseInt(this.getAttribute("data-selected"));
+		//console.log(this);
 		if (selected == 0) {
 			total = total - price;
 			console.log(total);
@@ -91,16 +94,29 @@ $(document).ready(function() {
 		}
 		balance.innerText = total;
 	})
-
+	// This function will loop through each store item, and determine which data-selected = 1. If = to 1, then
+	//    it will be added to a list, and from there appended later on
+	var appendFoods = $(".store-image").each(function() {
+		selected = parseInt(this.getAttribute("data-selected"));
+		if (selected == 1) {
+			userFood.push(food[j]);
+			this.setAttribute("data-selected", "0");
+			food[j].price = food[j].price * 2;
+		}
+		j = j + 1;
+	})
 	// checkout will take the points and determine whether or not you have enough points
 	$(".checkout").click(function() {
+		j = 0;
 		if (total > money) {
 			alert("You don't have enough money!");
 		}
 		else {
 			// push the array
 			money = money - total;
-			
+			appendFoods();
+			document.getElementById("score").innerHTML = "$" + money;
+
 		}
 	})
 
