@@ -1,4 +1,3 @@
-
 // assume there is a object named paragraph with inputs already
 $(document).ready(function() {
 	// Add functionality to Navigation buttons
