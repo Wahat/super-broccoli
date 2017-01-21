@@ -6,6 +6,7 @@
 h1 {
     color: navy;
     margin-left: 20px;
+    margin-top: 0px !important;
 }
 
 .text-center {
@@ -115,7 +116,6 @@ h1 {
 	height: 15vh;
 	width: 15vw;
 	background-color: brown;
-	margin: 10px 20px;
 	border-radius: 3px;
 }
 
