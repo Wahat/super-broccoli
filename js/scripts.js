@@ -2,15 +2,16 @@
 // assume there is a object named paragraph with inputs already
 $(document).ready(function() {
 	$(window).keydown(function(event){
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
+		if(event.keyCode == 13) {
+			event.preventDefault();
+			return false;
+		}
+	});
+	
 	var structpara = [
-		"dog cat and everything else",
-		"twitter facebook instagram",
-		"gang gang gang"
+	"dog cat and everything else",
+	"twitter facebook instagram",
+	"gang gang gang"
 	]
 	var helpReset = function () {
 		//console.log("lol");
@@ -66,9 +67,9 @@ $(document).ready(function() {
 	console.log(arrayText);
 	$(".typing").keypress(function(event){
 		//console.log(i);
-  		character = String.fromCharCode(event.which);
-  		rightString = formatType(arrayText,strlength, 1);
-  		wrongString = formatType(arrayText,strlength, 0);
+		character = String.fromCharCode(event.which);
+		rightString = formatType(arrayText,strlength, 1);
+		wrongString = formatType(arrayText,strlength, 0);
   		//console.log(rightString);
   		//console.log(wrongString);
   		//console.log (paragraphString);
@@ -98,12 +99,12 @@ $(document).ready(function() {
   					// done game
   					alert("congrats! Points= " + points);
   					document.getElementById("paragraph").innerHTML = structpara[Math.floor(Math.random() * structpara.length)];
-					text = document.getElementById("paragraph");
-					arrayText = text.innerHTML.split(' ');
-					i = 0;
-					mainString = "";
-					strlength = 0;
-					
+  					text = document.getElementById("paragraph");
+  					arrayText = text.innerHTML.split(' ');
+  					i = 0;
+  					mainString = "";
+  					strlength = 0;
+
   				}
   				document.getElementById("typing").value = "";
   				setTimeout(helpReset,10);
@@ -114,6 +115,6 @@ $(document).ready(function() {
   			}	
   		}
   		
-	});
+  	});
 	
 })

@@ -26,6 +26,8 @@ h1 {
 	background-size: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
+	padding-top: 20px;
+	padding:bottom: 10px;
 }
 
 .text-input-container {
@@ -80,10 +82,23 @@ h1 {
 
 /* DONT TOUCH!! */
 .right {
-	color: green;
+	color: #00ff00;
 	text-decoration: underline;
 }
 .wrong {
 	color: red;
 	text-decoration: underline;
+}
+.divider {
+	background-color: rgba(242, 242, 242, 0.3);
+	height: 80%;
+	position: relative;
+	display: absolute;
+	margin-left: 30px;
+	margin-right: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#typing {
+	text-align: center;
 }
