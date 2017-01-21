@@ -153,8 +153,17 @@ h2 {
 	top: 0px;
 	right: 0px;
 	height: 100%;
-	width: 20vw;
-	background-color: grey;
+	width: 0;
+	background-color: #5f796e;
 	z-index: 1;
-	transition: 2s;
+	transition: width 1.5s;
+	-webkit-transition: width 1.5s;
+	-moz-transition: width 1.5s;
+}
+.store-active {
+	width: 20vw;
+}
+
+#store hr {
+	margin-top: 7vh;
 }

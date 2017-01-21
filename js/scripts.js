@@ -1,6 +1,10 @@
 
 // assume there is a object named paragraph with inputs already
 $(document).ready(function() {
+	// Add functionality to Navigation buttons
+	$("#store-nav").click(function() {
+		$("#store").toggleClass('store-active');
+	});
 	// Key Code 13 is the return key, this prevents the return keys default functionality
 	$(window).keydown(function(event){
 		if(event.keyCode == 13) {
