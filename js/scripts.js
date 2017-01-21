@@ -120,6 +120,9 @@ $(document).ready(function() {
 	var money = 0;
 	var keyStrokes = 0;
 	
+	var cry = function () {
+		alert("cry");
+	}
 	// Function that checks to see if what have typed matches with the current word
 	var check = function (typed, word) {
 		lengthTyped = typed.length;
