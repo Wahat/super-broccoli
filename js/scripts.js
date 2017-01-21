@@ -11,7 +11,9 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	var userFood = [];
+	var userFood = [{
+		
+	}];
 	var food = [
 		{
 			name: "Pico de Gallo",
