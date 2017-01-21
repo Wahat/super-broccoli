@@ -37,4 +37,11 @@ h1 {
 .text-input-field {
 	height: 100%;
 	width: 100%;
+	font-size: 30px;
+}
+
+.text-paragraph {
+	height: 80%;
+	width: 80%;
+	word-wrap: break-word;
 }
