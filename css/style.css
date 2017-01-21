@@ -131,3 +131,7 @@ h1 {
 	height: 30px;
 	width: auto;
 }
+
+.shop {
+	visibility: hidden;
+}
