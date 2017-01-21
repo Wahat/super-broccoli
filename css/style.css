@@ -22,7 +22,7 @@ h1 {
 .text-paragraph-container {
 	height: 70%;
 	width: 100%;
-	background-image: url("/images/cutting-board.jpeg");
+	background-image: url("images/cutting-board.jpeg");
 	background-size: 100%;
 	background-position: center;
 }
@@ -56,7 +56,7 @@ h1 {
 .pan {
 	height: 100%;
 	width: auto;
-	background: url("/images/FryingPan.png") no-repeat;
+	background: url("images/FryingPan.png") no-repeat;
 	background-size: contain;
 	background-position: center;
 }
