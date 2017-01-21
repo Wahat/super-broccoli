@@ -8,6 +8,9 @@ h1 {
     margin-left: 20px;
     margin-top: 0px !important;
 }
+h2 {
+	margin-top: 0px !important;
+}
 
 .text-center {
 	text-align: center;
@@ -79,7 +82,7 @@ h1 {
 .single-page-view {
 	width: 100vw;
 	height: 100vh;
-	background-color: #F2DCA2;
+	background-color: #19404F;
 }
 
 .logo {
@@ -114,14 +117,17 @@ h1 {
 }
 
 .score-board {
-	height: 15vh;
-	width: 15vw;
-	background-color: brown;
+	height: 12vh;
+	width: 10vw;
+	background-color: #5f796e;
 	border-radius: 3px;
+	text-transform: uppercase;
+	color: white;
 }
 
 .score-label {
 	padding-top: 10px;
+	font-size: 20px;
 }
 
 #score {
@@ -131,4 +137,13 @@ h1 {
 .broccoli-icon {
 	height: 30px;
 	width: auto;
+}
+
+#brand {
+	color: white;
+	font-size: 24px;
+}
+
+#store-nav, #stat-nav {
+	color: white;
 }
