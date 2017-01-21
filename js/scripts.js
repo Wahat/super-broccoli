@@ -1,6 +1,7 @@
 
 // assume there is a object named paragraph with inputs already
 $(document).ready(function() {
+	// Key Code 13 is the return key, this prevents the return keys default functionality
 	$(window).keydown(function(event){
 		if(event.keyCode == 13) {
 			event.preventDefault();
@@ -8,15 +9,23 @@ $(document).ready(function() {
 		}
 	});
 	
+	// An Array of Strings for our text
 	var structpara = [
 	"dog cat and everything else",
 	"twitter facebook instagram",
 	"gang gang gang"
 	]
+
+	// Helper reset button, which clears the input field
 	var helpReset = function () {
 		//console.log("lol");
 		document.getElementById("typing").value = "";
 	}
+
+	// Initialization of function that returns formatted data given what the user inputs
+	// Either green for correct and red for incorrect
+	// i - ????
+	// w - ????
 	var formatType = function(arr,i,w) {
 		formattedPara = "";
 		for (j = 0; j < arr.length; j++) {
@@ -40,8 +49,11 @@ $(document).ready(function() {
 	var para = document.getElementById("paragraph");
 	// para will be useless, only a placeholder for the time being
 
+	// This randomly determines the text that will appear on the paragraph screen
+	// and syncs it to the html
 	var text = structpara[Math.floor(Math.random() * structpara.length)];
 	para.innerHTML = text;
+
 	//console.log(text);
 	var arrayText = text.split(' ');
 	//console.log(arrayText);
@@ -53,6 +65,7 @@ $(document).ready(function() {
 
 	var paragraphString = "";
 	
+	// Function that checks to see if what have typed matches with the current word
 	var check = function (typed, word) {
 		lengthTyped = typed.length;
 		subWord = word.substring(0, lengthTyped);
@@ -95,9 +108,16 @@ $(document).ready(function() {
   				i = i + 1;
   				points = points + 1;
   				strlength = strlength + 1;
+  				document.getElementById("score").innerHTML = points;
+  				// For each 5 points generate a brocolli on the pan
+  				if(points % 5 == 0) {
+  					var randomBroccoli = "<img class=\'broccoli-icon\' src=\'images/broccoli-icon.jpg\' style=\"position: absolute; top:50%; left: 50%;\">"
+  					$(".pan").append("<img class=\'broccoli-icon\' src=\'images/broccoli-icon.jpg\' style=\"position: absolute; top:50%; left: 50%;\">");
+  				}
+
   				if (i == arrayText.length) {
   					// done game
-  					alert("congrats! Points= " + points);
+  					// alert("congrats! Points= " + points);
   					document.getElementById("paragraph").innerHTML = structpara[Math.floor(Math.random() * structpara.length)];
   					text = document.getElementById("paragraph");
   					arrayText = text.innerHTML.split(' ');

@@ -8,11 +8,17 @@ h1 {
     margin-left: 20px;
 }
 
+.text-center {
+	text-align: center;
+}
+
 .pan-container {
 	height: 60vh;
 	width: 100%;
-	background-color: white;
 	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .cutting-board-container {
@@ -65,11 +71,13 @@ h1 {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
+	position: relative;
 }
 
 .single-page-view {
 	width: 100vw;
 	height: 100vh;
+	background-color: black;
 }
 
 .logo {
@@ -101,4 +109,25 @@ h1 {
 }
 #typing {
 	text-align: center;
+}
+
+.score-board {
+	height: 15vh;
+	width: 15vw;
+	background-color: brown;
+	margin: 10px 20px;
+	border-radius: 3px;
+}
+
+.score-label {
+	padding-top: 10px;
+}
+
+#score {
+	padding-bottom: 20px;
+}
+
+.broccoli-icon {
+	height: 30px;
+	width: auto;
 }
