@@ -1,8 +1,40 @@
-body {
-    background-color: lightblue;
+* {
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
     color: navy;
     margin-left: 20px;
+}
+
+.pan-container {
+	margin-top: 5vh;
+	height: 60vh;
+	width: 100%;
+	background-color: black;
+}
+
+.cutting-board-container {
+	height: 35vh;
+	width: 100%;
+}
+
+.text-paragraph-container {
+	height: 70%;
+	width: 100%;
+	background-image: url("/images/cutting-board.jpeg");
+	background-size: 100%;
+	background-position: center;
+}
+
+.text-input-container {
+	height: 20%;
+	width: 100%;
+	background-color: grey;
+}
+
+.text-input-field {
+	height: 100%;
+	width: 100%;
 }
