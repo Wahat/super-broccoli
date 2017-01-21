@@ -106,7 +106,6 @@ h2 {
 	background-color: rgba(242, 242, 242, 0.3);
 	height: 80%;
 	position: relative;
-	display: absolute;
 	margin-left: 30px;
 	margin-right: 40px;
 	padding-top: 10px;
@@ -146,4 +145,16 @@ h2 {
 
 #store-nav, #stat-nav {
 	color: white;
+	z-index: 2;
+}
+
+.store {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 20vw;
+	background-color: grey;
+	z-index: 1;
+	transition: 2s;
 }
