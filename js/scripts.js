@@ -8,13 +8,19 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	
-	// An Array of Strings for our text
-	var structpara = [
-	"dog cat and everything else",
-	"twitter facebook instagram",
-	"gang gang gang"
+	var food = [
+		{
+			name: "Pico de Gallo",
+			paragraph: "Stir the tomatoes, onion, cilantro, jalapeno pepper, lime juice, garlic, garlic powder, cumin, salt, and pepper together in a bowl. Refrigerate at least 3 hours before serving.",
+			ingredients: ["a"]
+		},
+		{
+			name: "Chicken Marsala",
+			paragraph: "Season chicken breasts all over with salt and pepper.",
+			ingredients: ["a","b"]
+		}
 	]
+	// An Array of Strings for our text
 
 	// Helper reset button, which clears the input field
 	var helpReset = function () {
@@ -51,12 +57,11 @@ $(document).ready(function() {
 
 	// This randomly determines the text that will appear on the paragraph screen
 	// and syncs it to the html
-	var text = structpara[Math.floor(Math.random() * structpara.length)];
+	var text = food[Math.floor(Math.random() * food.length)].paragraph;
 	para.innerHTML = text;
-
-	//console.log(text);
+	console.log(text);
 	var arrayText = text.split(' ');
-	//console.log(arrayText);
+	console.log(arrayText);
 
 	var i = 0;
 	var mainString = "";
@@ -73,7 +78,7 @@ $(document).ready(function() {
 			return true;
 		}
 		else {
-			false;
+			return false;
 		}
 	}
 	
@@ -104,7 +109,8 @@ $(document).ready(function() {
   		}
   		else {
   			mainString = document.getElementById("typing").value
-  			if (check(mainString, arrayText[i])) {
+
+  			if (check(mainString, arrayText[i]) && (arrayText[i].length == mainString.length)) {
   				i = i + 1;
   				points = points + 1;
   				strlength = strlength + 1;
@@ -119,12 +125,13 @@ $(document).ready(function() {
   				if (i == arrayText.length) {
   					// done game
   					// alert("congrats! Points= " + points);
-  					document.getElementById("paragraph").innerHTML = structpara[Math.floor(Math.random() * structpara.length)];
+  					document.getElementById("paragraph").innerHTML = food[Math.floor(Math.random() * food.length)].paragraph;
   					text = document.getElementById("paragraph");
   					arrayText = text.innerHTML.split(' ');
   					i = 0;
   					mainString = "";
   					strlength = 0;
+  					console.log("check");
 
   				}
   				document.getElementById("typing").value = "";
@@ -142,19 +149,3 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-recipies[1].name
-recipies[1].paragraph
-recipies[1].ingredients
-
-
-var recipies = [
-	{
-		name: "Pho"
-		paragraph: ""
-		ingredients: ""
-	}
-]

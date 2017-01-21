@@ -64,6 +64,7 @@ h1 {
 	margin-bottom: 0px;
 	border-radius: 0px;
 	height: 5vh;
+	background-color: #19404F;
 }
 
 .pan {
@@ -78,7 +79,7 @@ h1 {
 .single-page-view {
 	width: 100vw;
 	height: 100vh;
-	background-color: black;
+	background-color: #F2DCA2;
 }
 
 .logo {
@@ -131,3 +132,10 @@ h1 {
 	height: 30px;
 	width: auto;
 }
+<<<<<<< HEAD
+
+.shop {
+	visibility: hidden;
+}
+=======
+>>>>>>> d0988422096e26725f30b9179df6484cd83e979a
