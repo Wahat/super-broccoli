@@ -97,10 +97,12 @@ h2 {
 .right {
 	color: #00ff00;
 	text-decoration: underline;
+	font-weight: 200;
 }
 .wrong {
 	color: red;
 	text-decoration: underline;
+	font-weight: 200;
 }
 .divider {
 	background-color: rgba(242, 242, 242, 0.3);

@@ -11,9 +11,21 @@ $(document).ready(function() {
 			return false;
 		}
 	});
+<<<<<<< HEAD
 	var userFood = [{
 		
 	}];
+=======
+	var userFood = [
+		{
+			name: "Spinach Salad",
+			paragraph: "In a medium saucepan, melt butter over medium heat. Cook and stir almonds in butter until lightly toasted. Remove from heat, and let cool.",
+			ingredients: ["a"],
+			price: 20,
+			image: "images/salad.jpg"
+		}
+	];
+>>>>>>> 9a013e5ef90241c7c4eb35fbde847ea996fbcf82
 	var food = [
 		{
 			name: "Pico de Gallo",
@@ -85,7 +97,7 @@ $(document).ready(function() {
 		//console.log(this);
 		if (selected == 0) {
 			total = total - price;
-			console.log(total);
+			//console.log(total);
 			this.setAttribute("data-selected", "1");
 		}
 		else {
@@ -98,15 +110,7 @@ $(document).ready(function() {
 	})
 	// This function will loop through each store item, and determine which data-selected = 1. If = to 1, then
 	//    it will be added to a list, and from there appended later on
-	var appendFoods = $(".store-image").each(function() {
-		selected = parseInt(this.getAttribute("data-selected"));
-		if (selected == 1) {
-			userFood.push(food[j]);
-			this.setAttribute("data-selected", "0");
-			food[j].price = food[j].price * 2;
-		}
-		j = j + 1;
-	})
+	var appendFoods = 
 	// checkout will take the points and determine whether or not you have enough points
 	$(".checkout").click(function() {
 		j = 0;
@@ -116,9 +120,28 @@ $(document).ready(function() {
 		else {
 			// push the array
 			money = money - total;
-			document.getElementById("balance").innerText = "$0.00";
-			document.getElementById("score").innerText = "$" + money;
+			$(".store-image").each(function() {
+				selected = parseInt(this.getAttribute("data-selected"));
+				if (selected == 0) {
+					userFood.push(food[j]);
+					//console.log("pass");
+					//console.log(userFood);
+					this.setAttribute("data-selected", "1");
+					food[j].price = food[j].price * 2; 
+					multiplier = multiplier + 2;
+					document.getElementById("balance").innerText = "$0.00";
+					document.getElementById("score").innerText = "$" + money;
+					console.log(this);
+					this.innerText = food[j].price;
+  					text = document.getElementById("paragraph");
+  					arrayText = text.innerHTML.split(' ');
+  					i = 0;
+  					mainString = "";
+				}
+				j = j + 1;
+			})
 			total = 0;
+			
 
 		}
 	})
@@ -160,14 +183,16 @@ $(document).ready(function() {
 	// mainString - is the string that is constantly updated while user is typing
 	// money - to keep track of score
 	// keyStrokes - keeps track of number of keyStrokes for statistics purposes
+	// multiplier - more you buy, more the multiplier goes up!
 	var para = document.getElementById("paragraph");
-	var text = food[Math.floor(Math.random() * food.length)].paragraph;
+	var text = userFood[Math.floor(Math.random() * userFood.length)].paragraph;
 	para.innerHTML = text;
 	var arrayText = text.split(' ');
 	var i = 0;
 	var mainString = "";
-	var money = 50;
+	var money = 0;
 	var keyStrokes = 0;
+	var multiplier = 1;
 	
 	var cry = function () {
 		alert("cry");
@@ -214,19 +239,19 @@ $(document).ready(function() {
 
   			if (check(mainString, arrayText[i]) && (arrayText[i].length == mainString.length)) {
   				i = i + 1;
-  				money = money + 1;
+  				money = money + 1 * multiplier;
   				document.getElementById("score").innerHTML = "$" + money;
   				// For each 5 money generate a brocolli on the pan
   				if(money % 3 == 0) {
   					var randomBroccoli = "<img class=\'broccoli-icon\' src=\'images/broccoli_icon.jpg\' style=\"position: absolute; top:" + (Math.floor(Math.random() * 50)+10)+ "%; left:" + (Math.floor(Math.random() * 20)+40) +"%;\">";
-  					// console.log(randomBroccoli);
+  					// console.log(randomBroccoli)
   					$(".pan").append(randomBroccoli);
   				}
 
   				if (i == arrayText.length) {
   					// done game
   					// alert("congrats! money= " + money);
-  					document.getElementById("paragraph").innerHTML = food[Math.floor(Math.random() * food.length)].paragraph;
+  					document.getElementById("paragraph").innerHTML = userFood[Math.floor(Math.random() * userFood.length)].paragraph;
   					text = document.getElementById("paragraph");
   					arrayText = text.innerHTML.split(' ');
   					i = 0;
