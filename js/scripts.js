@@ -30,8 +30,8 @@ $(document).ready(function() {
 
 	// Initialization of function that returns formatted data given what the user inputs
 	// Either green for correct and red for incorrect
-	// i - ????
-	// w - ????
+	// i - the counter of the word (to figure out which one has to be spanned)
+	// w - 0 for when check is false (incorrect), 1 otherwise
 	var formatType = function(arr,i,w) {
 		formattedPara = "";
 		for (j = 0; j < arr.length; j++) {
@@ -52,23 +52,19 @@ $(document).ready(function() {
 		return(formattedPara);
 	}
 	//console.log(structpara.length);
+	// para - the paragraph DOC
+	// text - grabbing paragraph from food object randomly
+	// arrayText - An array for text, so that we can compare each word directly
+	// i - counter to count which index of array we are in
+	// mainString - is the string that is constantly updated while user is typing
+	// points - to keep track of score
 	var para = document.getElementById("paragraph");
-	// para will be useless, only a placeholder for the time being
-
-	// This randomly determines the text that will appear on the paragraph screen
-	// and syncs it to the html
 	var text = food[Math.floor(Math.random() * food.length)].paragraph;
 	para.innerHTML = text;
-	console.log(text);
 	var arrayText = text.split(' ');
-	console.log(arrayText);
-
 	var i = 0;
 	var mainString = "";
 	var points = 0;
-	var strlength = 0;
-
-	var paragraphString = "";
 	
 	// Function that checks to see if what have typed matches with the current word
 	var check = function (typed, word) {
@@ -86,11 +82,10 @@ $(document).ready(function() {
 	$(".typing").keypress(function(event){
 		//console.log(i);
 		character = String.fromCharCode(event.which);
-		rightString = formatType(arrayText,strlength, 1);
-		wrongString = formatType(arrayText,strlength, 0);
+		rightString = formatType(arrayText,i, 1);
+		wrongString = formatType(arrayText,i, 0);
   		//console.log(rightString);
   		//console.log(wrongString);
-  		//console.log (paragraphString);
   		//console.log(character);
   		if (character != " ") {
   			mainString = document.getElementById("typing").value + character;
@@ -113,7 +108,6 @@ $(document).ready(function() {
   			if (check(mainString, arrayText[i]) && (arrayText[i].length == mainString.length)) {
   				i = i + 1;
   				points = points + 1;
-  				strlength = strlength + 1;
   				document.getElementById("score").innerHTML = points;
   				// For each 5 points generate a brocolli on the pan
   				if(points % 3 == 0) {
@@ -130,7 +124,6 @@ $(document).ready(function() {
   					arrayText = text.innerHTML.split(' ');
   					i = 0;
   					mainString = "";
-  					strlength = 0;
   					console.log("check");
 
   				}
