@@ -185,4 +185,6 @@ h2 {
 .store-image {
 	height: 50%;
 	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
