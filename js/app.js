@@ -49,14 +49,14 @@ angular.module("TypeCooker", []).controller("MainController", function() {
 			paragraph: "Combine eggs, milk, bread crumbs, onion, salt, sage, and mushrooms in a large bowl. Crumble ground beef over mixture and stir well to combine. Shape into a round loaf; place in a 5-quart slow cooker.",
 			ingredients: ["a","b"],
 			price: 70,
-			image: "images/meat-loaf"
+			image: "images/meat-loaf.jpg"
 		},
 		{
 			name: "Crab Cakes",
 			paragraph: "Preheat oven broiler. Mix together crabmeat, bread crumbs, parsley, salt and pepper. Beat together egg, mayonnaise, hot sauce and mustard. Combine with other ingredients and mix well. Form into patties and place on a lightly greased broiler pan or baking sheet.",
 			ingredients: ["a","b"],
 			price: 90,
-			image: "images/crab-cakes"
+			image: "images/crab-cakes.jpg"
 		}
 	]
 });
