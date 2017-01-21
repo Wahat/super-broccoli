@@ -110,9 +110,10 @@ $(document).ready(function() {
   				strlength = strlength + 1;
   				document.getElementById("score").innerHTML = points;
   				// For each 5 points generate a brocolli on the pan
-  				if(points % 5 == 0) {
-  					var randomBroccoli = "<img class=\'broccoli-icon\' src=\'images/broccoli-icon.jpg\' style=\"position: absolute; top:50%; left: 50%;\">"
-  					$(".pan").append("<img class=\'broccoli-icon\' src=\'images/broccoli-icon.jpg\' style=\"position: absolute; top:50%; left: 50%;\">");
+  				if(points % 3 == 0) {
+  					var randomBroccoli = "<img class=\'broccoli-icon\' src=\'images/broccoli_icon.jpg\' style=\"position: absolute; top:" + (Math.floor(Math.random() * 50)+10)+ "%; left:" + (Math.floor(Math.random() * 20)+40) +"%;\">";
+  					console.log(randomBroccoli);
+  					$(".pan").append(randomBroccoli);
   				}
 
   				if (i == arrayText.length) {
@@ -138,3 +139,22 @@ $(document).ready(function() {
   	});
 	
 })
+
+
+
+
+
+
+
+recipies[1].name
+recipies[1].paragraph
+recipies[1].ingredients
+
+
+var recipies = [
+	{
+		name: "Pho"
+		paragraph: ""
+		ingredients: ""
+	}
+]
