@@ -12,7 +12,6 @@ $(document).ready(function() {
 		}
 	});
 	var food = [
-	// replace ingredients with images later on
 		{
 			name: "Pico de Gallo",
 			paragraph: "Stir the tomatoes, onion, cilantro, jalapeno pepper, lime juice, garlic, garlic powder, cumin, salt, and pepper together in a bowl. Refrigerate at least 3 hours before serving.",
@@ -71,7 +70,38 @@ $(document).ready(function() {
 			image: "images/crab-cakes"
 		}
 	]
-	// An Array of Strings for our text
+	var total = 0;
+	// store-image is the actually store. When clicked, we want the balance to show at the bottom
+	// price = price of the food clicked
+	// selected = will determine whether or not ingredient is being bought, or returned
+	// total = total price (balance)
+	$(".store-image").click(function () {
+		price = parseInt(this.getAttribute("data-foodPrice"));
+		selected = parseInt(this.getAttribute("data-selected"));
+		if (selected == 0) {
+			total = total - price;
+			console.log(total);
+			this.setAttribute("data-selected", "1");
+		}
+		else {
+			this.setAttribute("data-selected", "0");
+			total = total + price;
+			console.log(total)
+		}
+		balance.innerText = total;
+	})
+
+	// checkout will take the points and determine whether or not you have enough points
+	$(".checkout").click(function() {
+		if (total > money) {
+			alert("You don't have enough money!");
+		}
+		else {
+			// push the array
+			money = money - total;
+			
+		}
+	})
 
 	// Helper reset button, which clears the input field
 	var helpReset = function () {
@@ -86,7 +116,7 @@ $(document).ready(function() {
 	var formatType = function(arr,i,w) {
 		formattedPara = "";
 		for (j = 0; j < arr.length; j++) {
-			if ((j == i) && (w==1)) {
+			if ((j == i) && (w == 1)) {
 				formattedPara += "<span class = \"right\"><strong>" + arr[i] + "</strong></span>" + " ";
 				// add the class
 			}
@@ -102,7 +132,7 @@ $(document).ready(function() {
 		}
 		return(formattedPara);
 	}
-	//console.log(structpara.length);
+	
 	// para - the paragraph DOC
 	// text - grabbing paragraph from food object randomly
 	// arrayText - An array for text, so that we can compare each word directly
