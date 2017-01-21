@@ -11,11 +11,9 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-<<<<<<< HEAD
 	var userFood = [{
 		
 	}];
-=======
 	var userFood = [
 		{
 			name: "Spinach Salad",
@@ -25,7 +23,6 @@ $(document).ready(function() {
 			image: "images/salad.jpg"
 		}
 	];
->>>>>>> 9a013e5ef90241c7c4eb35fbde847ea996fbcf82
 	var food = [
 		{
 			name: "Pico de Gallo",
