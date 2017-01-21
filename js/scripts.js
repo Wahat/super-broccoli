@@ -32,6 +32,7 @@ $(document).ready(function() {
 	var arrayText = text.innerHTML.split(' ');
 	var i = 0;
 	var mainString = "";
+	var points = 0;
 	var check = function (typed, word) {
 		lengthTyped = typed.length;
 		subWord = word.substring(0, lengthTyped);
@@ -57,6 +58,7 @@ $(document).ready(function() {
   			if (check(mainString, arrayText[i])) {
   				// change css
   				//console.log("ok");
+  				points = points + 1;
   			}
   			else {
   				//change css
