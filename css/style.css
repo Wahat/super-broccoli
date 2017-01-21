@@ -63,7 +63,7 @@ h1 {
 	margin-bottom: 0px;
 	border-radius: 0px;
 	height: 5vh;
-	background-color: #F2DCA2;
+	background-color: #19404F;
 }
 
 .pan {
@@ -78,7 +78,7 @@ h1 {
 .single-page-view {
 	width: 100vw;
 	height: 100vh;
-	background-color: black;
+	background-color: #F2DCA2;
 }
 
 .logo {
