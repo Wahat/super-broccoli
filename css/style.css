@@ -11,11 +11,11 @@ h1 {
 .pan-container {
 	height: 60vh;
 	width: 100%;
-	background-color: black;
+	background-color: white;
 }
 
 .cutting-board-container {
-	height: 35vh;
+	height: 30vh;
 	width: 100%;
 }
 
@@ -40,12 +40,35 @@ h1 {
 }
 
 .text-paragraph {
-	height: 80%;
-	width: 80%;
+	height: 100%;
+	width: 100%;
 	word-wrap: break-word;
 	padding: 1% 10%;
+	overflow: hidden;
 }
 
-.navbar {
+.bootstrap-override.navbar {
 	margin-bottom: 0px;
+	border-radius: 0px;
+	height: 5vh;
+}
+
+.pan {
+	height: 100%;
+	width: auto;
+	background: url("/images/FryingPan.png") no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.single-page-view {
+	width: 100vw;
+	height: 100vh;
+}
+
+.logo {
+	max-height: 100%;
+	max-width: 100%;
+	float: left;
+	margin-right: 10px;
 }
