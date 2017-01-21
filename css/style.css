@@ -9,7 +9,6 @@ h1 {
 }
 
 .pan-container {
-	margin-top: 5vh;
 	height: 60vh;
 	width: 100%;
 	background-color: black;
@@ -44,4 +43,9 @@ h1 {
 	height: 80%;
 	width: 80%;
 	word-wrap: break-word;
+	padding: 1% 10%;
+}
+
+.navbar {
+	margin-bottom: 0px;
 }
