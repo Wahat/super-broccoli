@@ -167,9 +167,9 @@ h2 {
 }
 
 .store-item {
-	background-color: white;
+	background-color: #3A2716;
 	float: left;
-	height: 20vh;
+	height: 24vh;
 	width: 40%;
 	margin: 5%;
 }
@@ -187,4 +187,8 @@ h2 {
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+.store-text {
+	color: white;
 }

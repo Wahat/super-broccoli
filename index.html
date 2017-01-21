@@ -49,9 +49,11 @@
 			<!-- Main Side Slides -->
 			<!-- Hidden Store Slide -->
 			<div id="store" class="store" ng-controller="MainController as main">
-				<h1 class="text-center">Store</h1>
+				<h1 class="text-center" style="text-decoration: underline;">Store</h1>
 				<div class="store-item" ng-repeat="recipie in main.food">
 					<div class="store-image" style="background-image: url({{ recipie.image }})" data-foodPrice= "{{ recipie.price }}"></div>
+					<div class="store-text store-name text-center">{{ recipie.name }}</div>
+					<div class="store-text store-price text-center">{{ recipie.price | currency }}</div>
 				</div>
 
 				<h3 class="text-center" style="text-decoration: underline;">Balance</h2>
