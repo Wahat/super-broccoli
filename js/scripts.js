@@ -91,7 +91,8 @@ $(document).ready(function() {
 			total = total + price;
 			console.log(total)
 		}
-		balance.innerText = total;
+		balance.innerText = "$" + total;
+
 	})
 	// This function will loop through each store item, and determine which data-selected = 1. If = to 1, then
 	//    it will be added to a list, and from there appended later on
@@ -113,8 +114,9 @@ $(document).ready(function() {
 		else {
 			// push the array
 			money = money - total;
-			appendFoods();
-			document.getElementById("score").innerHTML = "$" + money;
+			document.getElementById("balance").innerText = "$0.00";
+			document.getElementById("score").innerText = "$" + money;
+			total = 0;
 
 		}
 	})
@@ -162,7 +164,7 @@ $(document).ready(function() {
 	var arrayText = text.split(' ');
 	var i = 0;
 	var mainString = "";
-	var money = 0;
+	var money = 50;
 	var keyStrokes = 0;
 	
 	var cry = function () {
