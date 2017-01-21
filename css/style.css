@@ -46,6 +46,9 @@ h1 {
 	word-wrap: break-word;
 	padding: 1% 10%;
 	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+
 }
 
 .bootstrap-override.navbar {
@@ -72,4 +75,15 @@ h1 {
 	max-width: 100%;
 	float: left;
 	margin-right: 10px;
+}
+
+
+/* DONT TOUCH!! */
+.right {
+	color: green;
+	text-decoration: underline;
+}
+.wrong {
+	color: red;
+	text-decoration: underline;
 }
