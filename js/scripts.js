@@ -11,9 +11,6 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	var userFood = [{
-		
-	}];
 	var userFood = [
 		{
 			name: "Spinach Salad",
@@ -91,6 +88,7 @@ $(document).ready(function() {
 	$(".store-image").click(function () {
 		price = parseInt(this.getAttribute("data-foodPrice"));
 		selected = parseInt(this.getAttribute("data-selected"));
+		$(this).toggleClass("selected-image");
 		//console.log(this);
 		if (selected == 0) {
 			total = total - price;
@@ -182,8 +180,12 @@ $(document).ready(function() {
 	// keyStrokes - keeps track of number of keyStrokes for statistics purposes
 	// multiplier - more you buy, more the multiplier goes up!
 	var para = document.getElementById("paragraph");
-	var text = userFood[Math.floor(Math.random() * userFood.length)].paragraph;
+	var inputtedName = document.getElementById("recipieName");
+	var randomNumber = Math.floor(Math.random() * userFood.length);
+	var text = userFood[randomNumber].paragraph;
+	var name = userFood[randomNumber].name;
 	para.innerHTML = text;
+	inputtedName.innerHTML = name;
 	var arrayText = text.split(' ');
 	var i = 0;
 	var mainString = "";
@@ -240,7 +242,7 @@ $(document).ready(function() {
   				document.getElementById("score").innerHTML = "$" + money;
   				// For each 5 money generate a brocolli on the pan
   				if(money % 3 == 0) {
-  					var randomBroccoli = "<img class=\'broccoli-icon\' src=\'images/broccoli_icon.jpg\' style=\"position: absolute; top:" + (Math.floor(Math.random() * 50)+10)+ "%; left:" + (Math.floor(Math.random() * 20)+40) +"%;\">";
+  					var randomBroccoli = "<img class=\'broccoli-icon\' src=\'images/broccoli_icon.png\' style=\"position: absolute; top:" + (Math.floor(Math.random() * 50)+10)+ "%; left:" + (Math.floor(Math.random() * 20)+40) +"%;\">";
   					// console.log(randomBroccoli)
   					$(".pan").append(randomBroccoli);
   				}
@@ -248,7 +250,9 @@ $(document).ready(function() {
   				if (i == arrayText.length) {
   					// done game
   					// alert("congrats! money= " + money);
-  					document.getElementById("paragraph").innerHTML = userFood[Math.floor(Math.random() * userFood.length)].paragraph;
+  					var randomNumber2 = Math.floor(Math.random() * userFood.length)
+  					document.getElementById("paragraph").innerHTML = userFood[randomNumber2].paragraph;
+  					document.getElementById("recipieName").innerHTML = userFood[randomNumber2].name;
   					text = document.getElementById("paragraph");
   					arrayText = text.innerHTML.split(' ');
   					i = 0;

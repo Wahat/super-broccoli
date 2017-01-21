@@ -38,6 +38,7 @@ h2 {
 	background-repeat: no-repeat;
 	padding-top: 20px;
 	padding:bottom: 10px;
+	position: relative;
 }
 
 .text-input-container {
@@ -119,7 +120,7 @@ h2 {
 
 .score-board {
 	height: 12vh;
-	width: 10vw;
+	width: 12vw;
 	background-color: #5f796e;
 	border-radius: 3px;
 	text-transform: uppercase;
@@ -182,6 +183,11 @@ h2 {
 	height: 30px;
 	width: 50%;
 	margin-bottom: 20px;
+	border-radius: 3px;
+	text-decoration: none;
+}
+.checkout:focus {
+	outline:0;
 }
 
 .store-image {
@@ -193,4 +199,15 @@ h2 {
 
 .store-text {
 	color: white;
+}
+
+.recipieName {
+	float: left;
+	position: absolute;
+	top: -15px;
+	left: 30px;
+}
+
+.selected-image {
+	border: 2px solid #F2DCA2;
 }
