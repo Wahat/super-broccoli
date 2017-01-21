@@ -12,6 +12,7 @@ h1 {
 	height: 60vh;
 	width: 100%;
 	background-color: white;
+	position: relative;
 }
 
 .cutting-board-container {
@@ -33,7 +34,7 @@ h1 {
 	background-color: grey;
 }
 
-.text-input-field {
+.typing {
 	height: 100%;
 	width: 100%;
 	font-size: 30px;
