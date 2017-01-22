@@ -63,9 +63,6 @@ var food = [
 // Angular module and controller
 angular.module("TypeCooker", []).controller("MainController", function() {
 	this.food = food;
-	// this.updatePrices = function() {
-	// 	this.food = food;
-	// };
 });
 /********************************************************************/
 /********************************************************************/
@@ -81,7 +78,7 @@ $(document).ready(function() {
 		if(event.keyCode == 13) {
 			event.preventDefault();
 			return false;
-		}
+		};
 	});
 
 	var userFood = [
@@ -113,14 +110,13 @@ $(document).ready(function() {
 		else {
 			this.setAttribute("data-selected", "0");
 			total = total + price;
-			console.log(total)
+			console.log(total);
 		}
 		balance.innerText = "$" + total;
 
-	})
+	});
 	// This function will loop through each store item, and determine which data-selected = 1. If = to 1, then
 	//    it will be added to a list, and from there appended later on
-	var appendFoods = 
 	// checkout will take the points and determine whether or not you have enough points
 	$(".checkout").click(function() {
 		$('.store-image').removeClass("selected-image");
@@ -131,6 +127,7 @@ $(document).ready(function() {
 		else {
 			// push the array
 			money = money - total;
+
 			$(".store-image").each(function() {
 				selected = parseInt(this.getAttribute("data-selected"));
 				if (selected == 0) {
@@ -138,13 +135,13 @@ $(document).ready(function() {
 					//console.log("pass");
 					//console.log(userFood);
 					this.setAttribute("data-selected", "1");
-					food[j].price = food[j].price * 2; 
-					multiplier = multiplier + 2;
+					//food[j].price = food[j].price * 2; 
+					//multiplier = multiplier + 2;
+					//Reset the balance and update money field
 					document.getElementById("balance").innerText = "$0.00";
 					document.getElementById("score").innerText = "$" + money;
-					console.log(this);
-					$('.selected-image').innerHTML = food[j].price;
-					console.log($('.store-price'));
+					//console.log(this);
+					//console.log($('.store-price'));
   					text = document.getElementById("paragraph");
   					arrayText = text.innerHTML.split(' ');
   					i = 0;
@@ -155,14 +152,14 @@ $(document).ready(function() {
 			total = 0;
 			
 
-		}
-	})
+		};
+	});
 
 	// Helper reset button, which clears the input field
 	var helpReset = function () {
 		//console.log("lol");
 		document.getElementById("typing").value = "";
-	}
+	};
 
 	// Initialization of function that returns formatted data given what the user inputs
 	// Either green for correct and red for incorrect
@@ -186,7 +183,7 @@ $(document).ready(function() {
 			}
 		}
 		return(formattedPara);
-	}
+	};
 	
 	// para - the paragraph DOC
 	// text - grabbing paragraph from food object randomly
@@ -206,13 +203,13 @@ $(document).ready(function() {
 	var arrayText = text.split(' ');
 	var i = 0;
 	var mainString = "";
-	var money = 1000;
+	var money = 0;
 	var keyStrokes = 0;
 	var multiplier = 1;
 	
 	var cry = function () {
 		alert("cry");
-	}
+	};
 	// Function that checks to see if what have typed matches with the current word
 	var check = function (typed, word) {
 		lengthTyped = typed.length;
@@ -223,7 +220,7 @@ $(document).ready(function() {
 		else {
 			return false;
 		}
-	}
+	};
 
 	console.log(arrayText);
 	$(".typing").keypress(function(event){
@@ -287,5 +284,5 @@ $(document).ready(function() {
   		
   	});
 	
-})
+});
 
