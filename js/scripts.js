@@ -134,21 +134,38 @@ $(document).ready(function() {
 			$(".store-image").each(function() {
 				selected = parseInt(this.getAttribute("data-selected"));
 				if (selected == 0) {
+					food[j].price = food[j].price * 2
 					userFood.push(food[j]);
 					//console.log("pass");
 					//console.log(userFood);
 					this.setAttribute("data-selected", "1");
-					food[j].price = food[j].price * 2; 
 					multiplier = multiplier + 2;
 					document.getElementById("balance").innerText = "$0.00";
 					document.getElementById("score").innerText = "$" + money;
 					console.log(this);
-					$('.selected-image').innerHTML = food[j].price;
-					console.log($('.store-price'));
+					$('.selected-image').innerHTML = userFood[userFood.length - 1].price;
+					$('.store-price')[j].innerHTML = "$" + food[j].price + ".00";
+					this.setAttribute("data-foodPrice", food[j].price)
+					// console.log($('.selected-image'));
+					// console.log($('.store-price')[j]);
+					// $('.store-price')[j].innerHTML = "$" + food[j].price; + ".00"
   					text = document.getElementById("paragraph");
   					arrayText = text.innerHTML.split(' ');
   					i = 0;
   					mainString = "";
+  					var randomNumber2 = Math.floor(Math.random() * userFood.length)
+  					document.getElementById("paragraph").innerHTML = userFood[randomNumber2].paragraph;
+  					para = document.getElementById("paragraph");
+					inputtedName = document.getElementById("recipieName");
+					randomNumber = Math.floor(Math.random() * userFood.length);
+					text = userFood[randomNumber].paragraph;
+					name = userFood[randomNumber].name;
+					para.innerHTML = text;
+					inputtedName.innerHTML = name;
+					arrayText = text.split(' ');
+					i = 0;
+				var mainString = "";
+
 				}
 				j = j + 1;
 			})
