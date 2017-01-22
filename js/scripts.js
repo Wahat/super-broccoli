@@ -277,6 +277,7 @@ $(document).ready(function() {
   			if (check(mainString, arrayText[i]) && (arrayText[i].length == mainString.length)) {
   				i = i + 1;
   				money = money + 1 * multiplier;
+  				document.getElementById("paragraph").innerHTML = text;
   				document.getElementById("score").innerHTML = "$" + money;
   				// For each 5 money generate a brocolli on the pan
   				if(money % 3 == 0) {
@@ -292,9 +293,11 @@ $(document).ready(function() {
   					document.getElementById("paragraph").innerHTML = userFood[randomNumber2].paragraph;
   					document.getElementById("recipieName").innerHTML = userFood[randomNumber2].name;
   					text = document.getElementById("paragraph");
+  					console.log(text);
   					arrayText = text.innerHTML.split(' ');
   					i = 0;
   					mainString = "";
+  					text = document.getElementById("paragraph").innerHTML;
   					//console.log("check");
 
   				}
