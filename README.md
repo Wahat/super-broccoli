@@ -3,7 +3,7 @@
 
 Originally based on a repository name suggested by Github, TypeChef was created during University of Toronto's hackathon, UofTHacks IV 2017. 
 
-The purpose of this webapp is to practice typing while discovering new recipes at the same time. Typing is an important skill in our digital age. Not only does it increase productivity, it can be beneficial to health as proper typing can improve posture. We believe that this webapp can reduce the digital gap but also allow practice without losing the interest of the older generation.
+Designed for adults, people of age or people who enjoy cooking, the purpose of this webapp is to practice typing while discovering new recipes at the same time. Typing is an important skill in our digital age. Not only does it increase productivity, it can be beneficial to health as proper typing can improve posture. We believe that this webapp can reduce the digital gap but also allow practice without losing the interest of the older generation.
 
 <b>Instructions:</b>
 <br>Go on to www.typechef.net or run index.html from the Github source</br>
